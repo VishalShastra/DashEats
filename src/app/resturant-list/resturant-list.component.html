@@ -1,5 +1,5 @@
 <div class="restaurant-list">
-    <div *ngFor="let restaurant of restaurants" class="restaurant-item">
+    <div *ngFor="let restaurant of restaurants" class="restaurant-item" (click)="viewDetails(restaurant.id)">
       <img [src]="restaurant.imageUrl" alt="{{ restaurant.name }}" class="restaurant-image" />
       <div class="restaurant-details">
         <h3>{{ restaurant.name }}</h3>
@@ -8,3 +8,5 @@
       </div>
     </div>
   </div>
+
+  <router-outlet></router-outlet> 

@@ -11,6 +11,8 @@ import { OrderConfirmationComponent } from './order-confirmation/order-confirmat
 import { AddressDetailComponent } from './address-detail/address-detail.component';
 import { CreateAddressComponent } from './create-address/create-address.component';
 import { AddressListComponent } from './address-list/address-list.component';
+import { AppHeaderComponent } from './app-header/app-header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AddressListComponent } from './address-list/address-list.component';
     OrderConfirmationComponent,
     AddressDetailComponent,
     CreateAddressComponent,
-    AddressListComponent
+    AddressListComponent,
+    AppHeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

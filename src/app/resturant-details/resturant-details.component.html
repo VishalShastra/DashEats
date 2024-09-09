@@ -1,1 +1,14 @@
-<p>resturant-details works!</p>
+<div *ngIf="restaurant">
+    <h2>{{ restaurant.name }}</h2>
+    <p><strong>Menu:</strong></p>
+    <ul>
+      <li *ngFor="let item of restaurant.menu">{{ item }}</li>
+    </ul>
+    <p><strong>Address:</strong> {{ restaurant.address }}</p>
+    <p><strong>Contact:</strong> {{ restaurant.contact }}</p>
+    <p><strong>Customer Reviews:</strong></p>
+    <ul>
+      <li *ngFor="let review of restaurant.reviews">{{ review }}</li>
+    </ul>
+  </div>
+  
