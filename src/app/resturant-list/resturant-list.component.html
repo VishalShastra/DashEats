@@ -1,1 +1,10 @@
-<p>resturant-list works!</p>
+<div class="restaurant-list">
+    <div *ngFor="let restaurant of restaurants" class="restaurant-item">
+      <img [src]="restaurant.imageUrl" alt="{{ restaurant.name }}" class="restaurant-image" />
+      <div class="restaurant-details">
+        <h3>{{ restaurant.name }}</h3>
+        <p>Rating: {{ restaurant.rating }} ⭐</p>
+        <p>Delivery Time: {{ restaurant.deliveryTime }}</p>
+      </div>
+    </div>
+  </div>

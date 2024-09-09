@@ -1,0 +1,14 @@
+.app-header {
+    background-color: #135706a8; /* Change this color to suit your design */
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-bottom: 4px solid #e0e0e0; /* Add a bottom border */
+    margin-bottom: 20px; /* Add some space between the header and the restaurant list */
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-family: 'Arial', sans-serif;
+  }
