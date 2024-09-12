@@ -12,3 +12,9 @@
     </ul>
   </div>
   
+  <app-menu [menuItems]="menuItems" (addItemToCart)="addItemToCart($event)"></app-menu>
+
+<app-cart [cartItems]="cartItems"
+          (updateQuantity)="updateQuantity($event)"
+          (removeItem)="removeItem($event)">
+</app-cart>

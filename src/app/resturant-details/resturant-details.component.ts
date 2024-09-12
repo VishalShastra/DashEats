@@ -52,4 +52,33 @@ export class ResturantDetailsComponent {
     this.restaurant = mockRestaurants.find(r => r.id === id);
   }
 
+
+  menuItems = [
+    { name: 'Pizza', price: 10, quantity: 1 },
+    { name: 'Burger', price: 7, quantity: 1 },
+    { name: 'Salad', price: 5, quantity: 1 }
+  ];
+
+  cartItems: any[] = [];
+
+  addItemToCart(item: any) {
+    const existingItem = this.cartItems.find(cartItem => cartItem.name === item.name);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      this.cartItems.push({ ...item });
+    }
+  }
+
+  updateQuantity(event: { item: any, quantity: number }) {
+    const cartItem = this.cartItems.find(ci => ci.name === event.item.name);
+    if (cartItem && event.quantity > 0) {
+      cartItem.quantity = event.quantity;
+    }
+  }
+
+  removeItem(item: any) {
+    this.cartItems = this.cartItems.filter(ci => ci.name !== item.name);
+  }
+
 }

@@ -1,1 +1,13 @@
-<p>app-cart works!</p>
+<!-- cart.component.html -->
+<h2 class="cart-heading">Your Cart</h2>
+<div *ngFor="let item of cartItems" class="cart-item">
+  <h4>{{ item.name }}</h4>
+  <input type="number" [(ngModel)]="item.quantity" (ngModelChange)="changeQuantity(item, item.quantity)" min="1" />
+  <p>{{ item.price | currency }}</p>
+  <button (click)="remove(item)">Remove</button>
+</div>
+<p class="cart-total">Total: {{ getTotalPrice() | currency }}</p>
+
+
+<!-- Add Checkout Button -->
+<button class="checkout-button" (click)="checkout()" [disabled]="cartItems.length === 0">Checkout</button>
