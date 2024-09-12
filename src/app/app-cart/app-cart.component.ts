@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-cart',
@@ -12,6 +13,9 @@ export class AppCartComponent {
   @Input() cartItems: any[] = [];
   @Output() updateQuantity = new EventEmitter<{ item: any, quantity: number }>();
   @Output() removeItem = new EventEmitter<any>();
+
+ 
+  constructor(private router: Router) {}
 
   getTotalPrice(): number {
     return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -33,7 +37,11 @@ export class AppCartComponent {
       alert('Order placed successfully!');
 
       // Optionally, you can clear the cart after checkout
-      this.cartItems = [];
+      if (this.cartItems.length > 0) {
+        // Clear the cart and navigate to the order confirmation page
+        this.cartItems = [];
+        this.router.navigate(['/order-confirmation']);
+      }
     }
   }
 

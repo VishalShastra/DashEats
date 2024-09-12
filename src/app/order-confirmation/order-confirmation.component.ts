@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-confirmation',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./order-confirmation.component.css']
 })
 export class OrderConfirmationComponent {
+
+  constructor(private router: Router) {}
+
+  // Method to navigate back to the home page
+  goToHome() {
+    this.router.navigate(['/']);
+  }
 
 }
